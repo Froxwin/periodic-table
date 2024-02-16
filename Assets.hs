@@ -1,5 +1,18 @@
 module Assets where
 
+tableString :: [Char]
+tableString = concat
+  [ "\ESC[30m\ESC[41mH  \ESC[0m                                                \ESC[30m\ESC[47mHe \ESC[0m\n"
+  , "\ESC[30m\ESC[41mLi Be \ESC[0m                              \ESC[30m\ESC[44mB  C  N  O  \ESC[45mF  \ESC[47mNe \ESC[0m\n"
+  , "\ESC[30m\ESC[41mNa Mg \ESC[0m                              \ESC[30m\ESC[44mAl Si P  S  \ESC[45mCl \ESC[47mAr \ESC[0m\n"
+  , "\ESC[30m\ESC[41mK  Ca \ESC[42mSc Ti V  Cr Mn Fe Co Ni Cu Zn \ESC[44mGa Ge As Se \ESC[45mBr \ESC[47mKr \ESC[0m\n"
+  , "\ESC[30m\ESC[41mRb Sr \ESC[42mY  Zr Nb Mo Tc Ru Rh Pd Ag Cd \ESC[44mIn Sn Sb Te \ESC[45mI  \ESC[47mXe \ESC[0m\n"
+  , "\ESC[30m\ESC[41mCs Ba \ESC[43m   \ESC[42mHf Ta W  Re Os Ir Pt Au Hg \ESC[44mTl Pb Bi Po \ESC[45mAt \ESC[47mRn \ESC[0m\n"
+  , "\ESC[30m\ESC[41mFr Ra \ESC[43m   \ESC[42mRf Db Sg Bh Hs Mt Ds Rg Cn \ESC[44mNh Fl Mc Lv \ESC[45mTs \ESC[47mOg \ESC[0m\n"
+  , "\ESC[30m      \ESC[43mLa Ce Pr Nd Pm Sm Eu Gd Tb Dy Ho Er Tm Yb Lu\ESC[0m\n"
+  , "\ESC[30m      \ESC[43mAc Th Pa U  Np Pu Am Cm Bk Cf Es Fm Md No Lr\ESC[0m\n"
+  ]
+
 -- Trust me i did not type this by hand :)
 periodicTable :: [(String, String, Integer, Double, String, String)]
 periodicTable =
