@@ -1,11 +1,13 @@
-import           Assets                         ( periodicTable )
+import           Assets                         ( periodicTable
+                                                , tableString
+                                                )
 import           Data.Char                      ( toLower )
 import           System.Environment             ( getArgs )
 import           System.Exit                    ( die )
 
 getElement :: [Char] -> ([Char], [Char], Integer, Double, [Char], [Char])
-getElement x | not $ null $ fetch x = head $ fetch x
-             | otherwise            = error "No entries found"
+getElement x | null $ fetch x = error "No entries found"
+             | otherwise      = head $ fetch x
  where
   fetch input = filter
     (\(a, b, c, d, e, f) ->
@@ -29,6 +31,9 @@ renderElement arg = putStr $ concatMap
 main :: IO ()
 main = do
   args <- getArgs
-  if not $ null args
-    then renderElement $ head args
-    else die "Provide search parameter; (Atomic Number | Name | Symbol)"
+  if null args
+    then
+      die
+      $  tableString
+      ++ "\nProvide search parameter; (Atomic Number | Name | Symbol)"
+    else renderElement $ head args
